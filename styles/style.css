@@ -12,7 +12,7 @@
 
 .page {
   min-inline-size: 320px;
-  min-block-size: 100dvb;
+  min-block-size: 100dvh;
   background-image: var(--bg-image);
   position: relative;
   background-position: center;
