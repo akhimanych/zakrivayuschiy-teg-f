@@ -11,30 +11,35 @@
 */
 
 .page {
+  justify-items: center;
   min-inline-size: 320px;
-  min-block-size: 100dvh;
+  min-block-size: 100dvd;
   background-image: var(--bg-image);
-  position: relative;
-  background-position: center;
   background-size: cover;
+  background-attachment: fixed;
+  font-variation-settings: "wght" var(--main-weight-text, 400);
   width: 100%;
-  margin-top: 100px;
+  padding: 100px 0;
 }
 
 .header {
+  background-color: var(--bg-color, #fff);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 20px;
-  font-family: var(--press-font), Helvetica, sans-serif;
-  background-color: var(--bg-color, #fff);
+  font-family: var(--accent-font), Helvetica, sans-serif;
+  inline-size: var(--header-size);
   text-transform: uppercase;
+  border: 2px solid currentColor;
   padding-block: var(--header-block);
   margin-block-end: 100px;
   margin: auto;
   border: 2px solid currentColor;
   inline-size: var(--header-size);
+  padding: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem) 0
+    clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem);
   margin-bottom: 100px;
 }
 
@@ -51,24 +56,21 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 46px;
+  gap: 50px;
   font-style: normal;
 }
 
 .card-content {
+  width: clamp(375px, 100%, 700px);
   background-color: var(--bg-color, #fff);
   border: 2px solid var(--border-color, #000);
   width: var(--card-section);
 }
 
-.page-section {
-  inline-size: var(--card-section);
-  margin: auto;
-}
 .card-title {
-  font-family: var(--inter-font), "Arial", sans-serif;
+  font-family: var(--main-font), "Arial", sans-serif;
   font-size: 18px;
-  font-weight: 700;
+  font-variation-settings: "wght" var(--card-title-weight, 700);
 }
 
 .title__name {
@@ -86,6 +88,7 @@
 .image {
   inline-size: 100%;
   height: 100%;
+  display: block;
   object-fit: cover;
   object-position: center;
   aspect-ratio: 1 /1;
@@ -98,7 +101,7 @@
   z-index: 10;
   opacity: 50%;
   color: var(--border-color, #000);
-  font-family: var(--press-font), Helvetica, sans-serif;
+  font-family: var(--accent-font), Helvetica, sans-serif;
   font-size: 14px;
   text-shadow: -1px 0 #fff, 1px 0 #fff, 0 -1px #fff, 0 1px #fff;
   inset-block-start: 1.786em;
@@ -106,18 +109,21 @@
   mix-blend-mode: hard-light;
 }
 
-.card-text {
-  font-family: var(--inter-font), "Arial", sans-serif;
-  line-height: 21px;
+.block-text {
+  font-family: var(--main-font), "Arial", sans-serif;
   font-size: 18px;
-  font-weight: 400;
-  border-top: 2px solid transparent;
+  font-variation-settings: "wght" var(--main-weight-text, 400);
+  display: grid;
+  padding: 25px;
   gap: 25px;
-  padding: 23px;
+  border-top: 2px solid var(--border-color, #000);
+  line-height: 21px;
+  grid-template-rows: auto 38px;
 }
 
 .text {
-  margin-bottom: 24px;
+  display: grid;
+  gap: 27px;
 }
 
 /*-----------------------button--------------------------*/
@@ -126,8 +132,8 @@
   display: flex;
   justify-content: end;
   align-items: center;
-  gap: 3px;
-  padding: 0 0px 6px;
+  gap: 4px;
+  padding: 6px 0px 6px;
 }
 
 .button {
@@ -153,12 +159,12 @@
 
 .button__text {
   position: relative;
-  font-family: var(--press-font), Helvetica, sans-serif;
+  font-family: var(--accent-font), Helvetica, sans-serif;
   font-size: 14px;
   line-height: 90%;
   text-align: center;
   mix-blend-mode: difference;
-  font-feature-settings: 400;
+  font-variation-settings: "wght" var(--main-weight-text, 400);
 }
 
 .button:focus {
@@ -171,7 +177,7 @@
 
 .button:not(.card__icon-button):focus-visible {
   box-shadow: 2px 2px 0 var(--border-color, #000);
-  transition: box-shadow 0.5s ease-in-out;
+  transition: box-shadow 0.3s ease;
 }
 
 .button:has(.button__text)::before {
@@ -194,7 +200,7 @@
   padding: 15px 20px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 9px;
 }
 
 .icon {
@@ -210,6 +216,14 @@
   color: var(--button-color, #fff);
 }
 
+.button__text {
+  position: relative;
+  font-size: 14px;
+  z-index: 10;
+  mix-blend-mode: difference;
+  color: #fff;
+}
+
 .dialog[open] {
   position: fixed;
   text-align: start;
@@ -222,11 +236,10 @@
   line-height: 150%;
   padding: 30px;
   border: 2px solid var(--border-color, #000);
-  overflow: hidden;
 }
 
 .dialog[open]::backdrop {
-  backdrop-filter: brightness(50%);
+  background-color: rgb(0 0 0 / 0.75);
 }
 
 .dialog-icon {
@@ -243,7 +256,7 @@
 }
 
 .dialog-text {
-  font-family: var(--press-font), Helvetica, sans-serif;
+  font-family: var(--accent-font), Helvetica, sans-serif;
   display: flex;
   align-items: center;
   margin-bottom: 30px;
@@ -252,31 +265,31 @@
 
 /*-----------------------filters--------------------------*/
 
-.filter-emptiness {
+.filter-saturate-min {
   filter: saturate(0.3) hue-rotate(10deg);
 }
 
-.filter-failure {
+.filter-saturate-max {
   filter: saturate(4);
 }
 
-.filter-idealism {
+.filter-hue-rotate {
   filter: saturate(2) hue-rotate(40deg) contrast(56%);
 }
 
-.filter-folks {
+.filter-invert {
   filter: hue-rotate(95deg) contrast(100%) invert(27%);
 }
 
-.filter-tactics {
+.filter-contrast {
   filter: grayscale(75%) contrast(125%);
 }
 
-.filter-despair {
+.filter-blur {
   filter: blur(10px);
 }
 
-.filter-point {
+.filter-huerast {
   filter: hue-rotate(140deg) contrast(130%) blur(2px);
 }
 
@@ -298,14 +311,15 @@
 
   .button-save {
     flex-direction: column;
-  }
-
-  .button-save svg {
-    block-size: 1.556em;
+    gap: 9px;
   }
 
   .dialog[open] {
     max-inline-size: 341px;
     padding-inline: 40px;
+  }
+
+  .icon {
+    width: 28px;
   }
 }

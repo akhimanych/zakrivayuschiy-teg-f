@@ -25,42 +25,42 @@
 }
 
 .contour {
-  fill: var(--heart-color-black, #000);
+  fill: var(--icon-color-black, #000);
   transition: fill 0.1s linear;
 }
 
 .like-icon:hover .core {
-  fill: var(--heart-color-black, #000);
+  fill: var(--icon-color-black, #000);
   transition: fill 0.3s linear;
 }
 
 .like-icon:hover .main-body {
-  fill: var(--heart-color-black, #000);
+  fill: var(--icon-color-black, #000);
   transition: fill 0.3s linear 0.05s;
 }
 
 .like-icon:active .core {
-  fill: var(--heart-color-red, #ff0000);
+  fill: var(--icon-color-red, #ff0000);
   transition: fill 0.3s linear;
 }
 
 .like-icon:active .main-body {
-  fill: var(--heart-color-red, #ff0000);
+  fill: var(--icon-color-red, #ff0000);
   transition: fill 0.3s linear 0.05s;
 }
 
 .like-icon.is-liked .core {
-  fill: var(--heart-color-red, #ff0000);
+  fill: var(--icon-color-red, #ff0000);
   transition: fill 0.3s linear;
 }
 
 .like-icon.is-liked .main-body {
-  fill: var(--heart-color-red, #ff0000);
+  fill: var(--icon-color-red, #ff0000);
   transition: fill 0.3s linear 0.05s;
 }
 
 .like-icon.is-liked .contour {
-  fill: var(--heart-color-red, #ff0000);
+  fill: var(--icon-color-red, #ff0000);
   transition: fill 0.3s linear 0.06s;
 }
 
