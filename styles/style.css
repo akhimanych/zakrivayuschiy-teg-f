@@ -196,7 +196,7 @@
 /*-----------------------dialog-window--------------------------*/
 
 .button-save {
-  margin: 50px auto 100px;
+  margin: 50px auto 0px;
   padding: 15px 20px;
   display: flex;
   align-items: center;
@@ -228,7 +228,6 @@
   position: fixed;
   text-align: start;
   max-inline-size: 357px;
-  max-block-size: 193px;
   inset-inline-start: 0;
   inset-block-end: 0;
   text-transform: uppercase;
